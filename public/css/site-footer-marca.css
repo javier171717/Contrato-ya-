@@ -1,0 +1,118 @@
+/* Footer SanabriaCod — colores del sistema Compraventa */
+.site-footer-marca {
+    --footer-brand-from: var(--cv-primary, #1a5f2a);
+    --footer-brand-to: var(--cv-primary-light, #2d8a3e);
+    text-align: center;
+    padding: 2rem 1rem 2.5rem;
+    margin-top: auto;
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.site-footer-marca__credit {
+    margin: 0 0 0.35rem;
+    color: #64748b;
+}
+
+.site-footer-marca__heart {
+    color: #ef4444;
+    font-size: 0.9em;
+    margin: 0 0.15rem;
+}
+
+.site-footer-marca__code {
+    color: var(--footer-brand-from);
+    font-weight: 600;
+    margin: 0 0.2rem;
+    font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+    font-size: 0.95em;
+}
+
+.site-footer-marca__brand {
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(90deg, var(--footer-brand-from) 0%, var(--footer-brand-to) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.site-footer-marca__brand:hover {
+    opacity: 0.85;
+    color: transparent;
+}
+
+.site-footer-marca__tagline {
+    margin: 0 0 0.85rem;
+    font-size: 0.82rem;
+    color: #94a3b8;
+}
+
+.site-footer-marca__wa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #475569;
+    text-decoration: none;
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.site-footer-marca__wa:hover {
+    color: var(--footer-brand-to);
+    transform: scale(1.06);
+}
+
+/* Variante para fondo oscuro (login) */
+.site-footer-marca--light .site-footer-marca__credit,
+.site-footer-marca--light {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.site-footer-marca--light .site-footer-marca__tagline {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.site-footer-marca--light .site-footer-marca__wa {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.site-footer-marca--light .site-footer-marca__wa:hover {
+    color: #bbf7d0;
+}
+
+.site-footer-marca--light .site-footer-marca__code {
+    color: #86efac;
+}
+
+.site-footer-marca--light .site-footer-marca__brand {
+    background: linear-gradient(90deg, #bbf7d0 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.login-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.login-body .login-container {
+    flex: 1;
+}
+
+.app-body,
+.admin-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-body main,
+.admin-body main {
+    flex: 1;
+}

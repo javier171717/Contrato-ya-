@@ -1,0 +1,6 @@
+# Si subes TODO el proyecto a public_html (sin apuntar el dominio a /public),
+# este archivo redirige las peticiones a la carpeta public/.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

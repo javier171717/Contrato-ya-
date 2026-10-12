@@ -1,0 +1,337 @@
+/* App principal - Compraventa PWA */
+:root {
+    --cv-primary: #1a5f2a;
+    --cv-primary-light: #2d8a3e;
+    --cv-bg: #f4f6f4;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--cv-bg);
+}
+
+.app-body {
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+/* Login */
+.login-body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a5f2a 0%, #2d8a3e 50%, #1a5f2a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.login-logo {
+    width: 72px;
+    height: 72px;
+    background: var(--cv-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.login-logo--img {
+    background: transparent;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.login-logo--img img {
+    display: block;
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+}
+
+/* Stats */
+.stat-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 4px solid #ccc;
+}
+
+.stat-vigente { border-left-color: #198754; }
+.stat-redimido { border-left-color: #0d6efd; }
+.stat-vencido { border-left-color: #dc3545; }
+.stat-vendido { border-left-color: #6c757d; }
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+}
+
+.stat-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.stat-card-link:hover .stat-card {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card-link .stat-card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    cursor: pointer;
+}
+
+/* Estados */
+.badge.estado-vigente { background: #198754; }
+.badge.estado-activo { background: #198754; }
+.badge.estado-renovado { background: #0dcaf0; color: #000; }
+.badge.estado-redimido { background: #0d6efd; }
+.badge.estado-vencido { background: #dc3545; }
+.badge.estado-vendido { background: #6c757d; }
+
+/* FAB móvil */
+.fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background: var(--cv-primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 16px rgba(26,95,42,0.4);
+    text-decoration: none;
+    z-index: 1000;
+    transition: transform 0.2s;
+}
+
+.fab:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Navbar */
+.navbar-brand {
+    font-size: 1rem;
+}
+
+.btn-new-contract {
+    background: rgba(255,255,255,0.15) !important;
+    border-radius: 8px;
+    margin-left: 0.5rem;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.card-header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+}
+
+/* Autocompletado búsqueda contratos */
+.cv-autocomplete-wrap {
+    position: relative;
+}
+
+.cv-autocomplete-list {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    margin: 0;
+    padding: 0.35rem 0;
+    list-style: none;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.cv-autocomplete-item {
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.cv-autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.cv-autocomplete-item:hover,
+.cv-autocomplete-item.active {
+    background: #f0faf3;
+}
+
+.cv-autocomplete-main {
+    display: block;
+    font-weight: 600;
+    color: #1a2233;
+    font-size: 0.92rem;
+    line-height: 1.35;
+}
+
+.cv-autocomplete-sub {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.8rem;
+    color: #6b7280;
+    text-transform: capitalize;
+}
+
+/* Resumen financiero contrato */
+.fin-box {
+    background: #f8faf9;
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    height: 100%;
+}
+
+.fin-label {
+    display: block;
+    font-size: 0.78rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.25rem;
+}
+
+.fin-value {
+    display: block;
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.fin-total {
+    background: #fff5f5;
+    border: 1px solid #fecaca;
+}
+
+/* Módulo finanzas */
+.finanzas-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.finanzas-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #374151;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: all 0.15s ease;
+}
+
+.finanzas-pill:hover {
+    border-color: var(--cv-primary-light);
+    color: var(--cv-primary);
+}
+
+.finanzas-pill.active {
+    background: #ecfdf3;
+    border-color: var(--cv-primary-light);
+    color: var(--cv-primary);
+}
+
+.finanzas-pill-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.btn-finanzas {
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.6rem 1.25rem;
+    border-radius: 10px;
+}
+
+.btn-finanzas:hover {
+    color: #fff;
+    opacity: 0.92;
+}
+
+.fin-metric-label {
+    display: block;
+    font-size: 0.82rem;
+    color: #6b7280;
+    margin-bottom: 0.35rem;
+}
+
+.fin-metric-value {
+    display: block;
+    font-size: 1.65rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.fin-metric-sub {
+    display: block;
+    font-size: 0.78rem;
+    color: #9ca3af;
+    margin-top: 0.25rem;
+}
+
+.fin-metric-ingreso .fin-metric-value { color: #16a34a; }
+.fin-metric-gasto .fin-metric-value { color: #dc2626; }
+.fin-metric-empeño .fin-metric-value { color: #7c3aed; }
+.fin-metric-balance .fin-metric-value { color: #111827; }
+.fin-metric-cartera .fin-metric-value { color: #2563eb; }
+
+/* Formularios táctiles */
+@media (max-width: 768px) {
+    .form-control-lg {
+        font-size: 1.1rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .table {
+        font-size: 0.85rem;
+    }
+}

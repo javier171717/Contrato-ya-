@@ -1,0 +1,65 @@
+CONTRATOYA — PAQUETE PARA HOSTINGER
+===================================
+
+URL final: https://contratoya.online/
+
+
+1) EDITAR .env (en esta carpeta, ANTES de subir)
+   - Abre el archivo .env
+   - Pon los datos de MySQL que te da Hostinger (hPanel → Bases de datos)
+   - Guarda el archivo
+
+
+2) SUBIR A HOSTINGER
+   - Entra a hPanel → Archivos → Administrador de archivos
+   - Abre: domains/contratoya.online/
+   - Sube TODO el contenido de esta carpeta:
+     
+     app/          → domains/contratoya.online/app/
+     system/       → domains/contratoya.online/system/
+     writable/     → domains/contratoya.online/writable/
+     database/     → domains/contratoya.online/database/  (opcional)
+     .env          → domains/contratoya.online/.env
+     public_html/  → domains/contratoya.online/public_html/
+
+   IMPORTANTE: El contenido de public_html/ va DENTRO de la carpeta
+   public_html que ya existe en Hostinger (reemplaza lo que haya).
+
+
+3) BASE DE DATOS
+   - hPanel → Bases de datos → crea BD y usuario
+   - phpMyAdmin → Importar → sube tu export de compraventa desde XAMPP
+     (o importa database/compraventa.sql + migration_superadmin.sql)
+
+
+4) PHP
+   - hPanel → Avanzado → Configuración de PHP → PHP 8.1 o 8.2
+
+
+5) SSL
+   - hPanel → Seguridad → SSL → activar para contratoya.online
+   - En public_html/.htaccess descomenta las líneas de HTTPS (si no lo están)
+
+
+6) PERMISOS
+   - Carpeta writable/ → permisos 755 (o 775 si da error)
+
+
+7) PROBAR
+   - Abre https://contratoya.online/
+   - Login ContratoYa
+
+
+SUBIR COMO ZIP (más rápido)
+---------------------------
+1. Comprime esta carpeta deploy-hostinger en un .zip
+2. Súbelo a domains/contratoya.online/ en Hostinger
+3. Extrae el zip ahí
+4. Mueve el contenido de public_html/ a la public_html del servidor
+
+
+CREDENCIALES DE PRUEBA (si importaste BD local)
+------------------------------------------------
+Super admin: platform / admin123
+Dueño Valery: admin / admin123
+→ Cámbialas en producción.

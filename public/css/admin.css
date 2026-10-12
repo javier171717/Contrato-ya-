@@ -1,0 +1,166 @@
+/* Panel Super Admin - estilo plataforma */
+:root {
+    --admin-primary: #4f46e5;
+    --admin-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --admin-bg: #f8fafc;
+    --admin-card: #ffffff;
+}
+
+.admin-body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--admin-bg);
+    min-height: 100vh;
+}
+
+.admin-header {
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-decoration: none;
+}
+
+.admin-user-line {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.15rem;
+}
+
+.admin-nav {
+    display: flex;
+    gap: 0.5rem;
+    padding-bottom: 0.75rem;
+}
+
+.admin-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #475569;
+    font-size: 0.9rem;
+    border: 1px solid transparent;
+}
+
+.admin-nav-link.active {
+    background: #ecfdf5;
+    border-color: #a7f3d0;
+    color: #047857;
+    font-weight: 600;
+}
+
+.admin-welcome {
+    background: #ecfdf5;
+    border-bottom: 1px solid #d1fae5;
+    padding: 0.65rem 0;
+    font-size: 0.9rem;
+    color: #065f46;
+}
+
+.admin-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.admin-subtitle {
+    color: #64748b;
+    margin-bottom: 0;
+}
+
+.admin-page-header {
+    margin-bottom: 1.5rem;
+}
+
+.admin-card {
+    background: var(--admin-card);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.admin-card-action {
+    max-width: 420px;
+}
+
+.admin-meta {
+    font-size: 0.92rem;
+    color: #334155;
+}
+
+.btn-admin-gradient {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--admin-gradient);
+    color: #fff !important;
+    border: none;
+    padding: 0.65rem 1.25rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-admin-gradient:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+    color: #fff;
+}
+
+.admin-table th {
+    background: #f8fafc;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #64748b;
+    border-bottom-width: 1px;
+}
+
+.admin-table td {
+    vertical-align: middle;
+    padding: 0.85rem 1rem;
+}
+
+.admin-link {
+    color: var(--admin-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.admin-link:hover {
+    text-decoration: underline;
+}
+
+.admin-tabs {
+    border-bottom: 1px solid #e2e8f0;
+    gap: 0.25rem;
+}
+
+.admin-tabs .nav-link {
+    color: #64748b;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+}
+
+.admin-tabs .nav-link.active {
+    color: var(--admin-primary);
+    border-bottom-color: var(--admin-primary);
+    background: transparent;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .admin-title { font-size: 1.35rem; }
+    .admin-tabs { flex-wrap: nowrap; overflow-x: auto; }
+}
